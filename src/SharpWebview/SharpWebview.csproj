@@ -7,10 +7,10 @@
     <Authors>Gerrit 'Geaz' Gazic</Authors>
     <Owners>Gerrit 'Geaz' Gazic</Owners>
     <Description>C# bindings for zserge/webview - Batteries included</Description>
-    <PackageId>SharpWebview</PackageId>
-    <PackageVersion>0.10.0</PackageVersion>
+    <PackageId>SharpWebview_icavalheiro</PackageId>
+    <PackageVersion>0.11.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/webview/webview_csharp</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/icavalheiro/webview_csharp</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
