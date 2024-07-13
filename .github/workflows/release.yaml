@@ -1,7 +1,7 @@
 name: ReleaseBuild
 on:
-  release:
-    types: [published]
+  push:
+    branches: [master]
 
 jobs:
   build:
@@ -18,5 +18,7 @@ jobs:
       run: dotnet build src\SharpWebview\SharpWebview.csproj --configuration Release
     - name: Package nuget
       run: dotnet pack src\SharpWebview\SharpWebview.csproj --configuration Release
-    - name: Push nuget
-      run: dotnet nuget push src\SharpWebview\bin\Release\*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols
+    - name: Prep packages
+      run: dotnet nuget add source --username ${{ secrets.NUGET_PACKAGE_OWNER }} --password ${{ secrets.NUGET_PACKAGE_TOKEN }} --name github "https://nuget.pkg.github.com/icavalheiro/index.json"
+    - name: Push package to GitHub packages 
+      run: dotnet nuget push src\SharpWebview\bin\Release\*.nupkg --api-key ${{ secrets.NUGET_PACKAGE_TOKEN }} --source "github"
