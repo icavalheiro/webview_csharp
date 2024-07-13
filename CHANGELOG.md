@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+##  2024-07-13
+- Added embbeded resources and fixed the loopback on newer windows
+
 ## [0.7.0] - 2022-04-13
 ### Fixed
 - Update to latest webview version
